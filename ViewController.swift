@@ -14,16 +14,16 @@ class ViewController: UIViewController , UITextFieldDelegate , UITextViewDelegat
     @IBAction func button(sender: UIButton) {
         print("button clicked")
     }
+    @IBOutlet weak var UserName: UITextField!
     
-    @IBOutlet weak var nameTextField: UITextField!
-    
-    @IBOutlet weak var textView: UITextView!
-    
-    
+    @IBOutlet weak var PassWord: UITextField!
+
+    @IBOutlet weak var UserLabel: UILabel!
+    @IBOutlet weak var PassLabel: UILabel!
     override func viewDidLoad() {
         super.viewDidLoad()
-        nameTextField.delegate = self
-        textView.delegate=self
+        UserName.delegate = self
+        PassWord.delegate=self
         //self.view.addSubview(nameTextField)
         // Do any additional setup after loading the view, typically from a nib.
     }
@@ -39,10 +39,10 @@ class ViewController: UIViewController , UITextFieldDelegate , UITextViewDelegat
         return true
     }
     func textFieldDidEndEditing(textField: UITextField) {
-        print(nameTextField.text)
-        textView.text=nameTextField.text
+        print(UserName.text)
+        print(PassWord.text)
+        UserLabel.text=UserName.text
+        PassLabel.text=PassWord.text
     }
-
-
 }
 
